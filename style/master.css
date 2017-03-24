@@ -67,3 +67,8 @@ nav i {
 .page-footer .footer-copyright {
   background-color: rgba(6, 6, 6, 0.6);
 }
+
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
