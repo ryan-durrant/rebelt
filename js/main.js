@@ -1,6 +1,8 @@
 //credits https://codyhouse.co/gem/loginsignup-modal-window/
-
+/* jshint expr: true */
 jQuery(document).ready(function($){
+	console.log("ready");
+
 	var formModal = $('.cd-user-modal'),
 		formLogin = formModal.find('#cd-login'),
 		formSignup = formModal.find('#cd-signup'),

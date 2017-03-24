@@ -72,3 +72,7 @@ nav i {
 footer ul li a:hover {
   text-decoration: underline;
 }
+
+.btn {
+  background-color: #3B5998;
+}

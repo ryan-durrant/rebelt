@@ -370,7 +370,6 @@ xsigin/signup popup
   position: absolute;
   width: 100%;
   left: 0;
-  bottom: -30px;
   text-align: center;
   font-size: 14px;
   font-size: 0.875rem;
@@ -401,6 +400,7 @@ xsigin/signup popup
 
 #cd-login, #cd-signup, #cd-reset-password {
   display: none;
+  text-align: center;
 }
 
 #cd-login.is-selected, #cd-signup.is-selected, #cd-reset-password.is-selected {
