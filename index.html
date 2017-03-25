@@ -9,16 +9,17 @@
     <script src="https://use.fontawesome.com/4a3ab97e3c.js"></script>
     <link rel="stylesheet" href="/style/login.css">
     <link rel="stylesheet" href="/style/master.css">
+    <link rel="stylesheet" href="/style/about.css">
 
 </head>
 
 <body>
     <nav>
         <div class="nav-wrapper">
-            <a href="#"><img src="img/2-logo.jpg" alt="rebelt logo" class="brand-logo center"></a>
+            <a ui-sref="home"><img src="img/2-logo.jpg" alt="rebelt logo" class="brand-logo center"></a>
             <ul class="left hide-on-med-and-down">
-                <li><a class='navSpacing' href="#!">MEN</a></li>
-                <li><a class='navSpacing' href="#!">WOMEN</a></li>
+                <li><a class='navSpacing' ui-sref="mens_belts">MEN</a></li>
+                <li><a class='navSpacing' ui-sref="womens_belts">WOMEN</a></li>
                 <li><a class='navSpacing' href="#!">CUSTOMIZE</a></li>
             </ul>
             <a class="right" id='shoppingCart' href='#'><i class="fa fa-shopping-cart fa-2x"></i></a>
@@ -77,6 +78,7 @@
 
             <div id="cd-signup">
                 <!-- sign up form -->
+                <a href="http://localhost:3003/auth/facebook/" class="waves-effect waves-light btn"><i class="fa fa-facebook-square material-icons left"></i>Sign up with Facebook</a>
                 <form class="cd-form">
                     <p class="fieldset">
                         <label class="image-replace cd-username" for="signup-username">Username</label>
@@ -99,7 +101,7 @@
 
                     <p class="fieldset">
                         <input type="checkbox" id="accept-terms">
-                        <label for="accept-terms">I agree to the <a href="#0">Terms</a></label>
+                        <!-- <label for="accept-terms">I agree to the <a href="#0">Terms</a></label> -->
                     </p>
 
                     <p class="fieldset">
@@ -155,10 +157,10 @@
                     <!-- <h5 class="white-text">Links</h5> -->
                     <ul>
                         <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Men</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Women</a></li>
+                        <li><a class="grey-text text-lighten-3" ui-sref="mens_belts">Men</a></li>
+                        <li><a class="grey-text text-lighten-3" ui-sref="womens_belts">Women</a></li>
                         <li><a class="grey-text text-lighten-3" href="#!">Customize</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
+                        <li><a class="grey-text text-lighten-3" ui-sref="about">About Us</a></li>
                         <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
                     </ul>
                 </div>

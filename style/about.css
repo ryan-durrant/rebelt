@@ -1,0 +1,34 @@
+#about_us {
+    font-size: 1.2em;
+}
+
+@media screen and (max-width: 1155px) {
+  /*.row {
+    flex-wrap: wrap;
+  }*/
+}
+
+#center {
+  display: flex;
+  align-items: center;
+}
+
+#teamPhoto {
+  object-fit: cover;
+  width: 100%;
+  height: 600px !important;
+  border: 1px solid #b9b9b9;
+  /*background-size: Gabe thinks that this is the answer to bring the pic up a bit*/
+}
+
+#bottomPhoto {
+  font-size: 0;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);*/
+  font-size: 0px;
+  /*Font-size 0 removes the white space between the footer and the image*/
+}

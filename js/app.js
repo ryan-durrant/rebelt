@@ -6,6 +6,21 @@ var app = angular.module('app', ['ui.router'])
         url:'/',
         templateUrl: "./js/views/home.html",
         controller: "controller"
+      })
+      .state({
+        name: 'mens_belts',
+        url:'/mens',
+        templateUrl: "./js/views/mens_belts.html"
+      })
+      .state({
+        name: 'womens_belts',
+        url: '/womens',
+        templateUrl: "./js/views/womens_belts.html"
+      })
+      .state({
+        name: 'about',
+        url: '/about',
+        templateUrl: "./js/views/about_us.html"
       });
 
       //MUST DO!!! This sends your page to the home state upon arrival.
