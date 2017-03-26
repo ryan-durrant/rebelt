@@ -1,10 +1,29 @@
 var express = require('express');
 var session = require('express-session');
+var bodyParser = require('body-parser');
+var cors = require('cors');
+var massive = require('massive');
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
 
 var app = express();
 
+//-------------------DATABASE-----------------------
+var connectionString = "postgres://ryandurrant@localhost/rebelt";
+var massiveInstance = massive.connectSync({connectionString : connectionString});
+
+module.exports = app;
+// var controller = require('./controller.js');
+
+app.use(bodyParser.json());
+app.use(cors());
+
+app.set('db', massiveInstance);
+//massive looks for a folder named db where it looks for the sql queries
+var db = app.get('db');
+
+
+//---------------OAUTH WITH FACEBOOK-----------------
 app.use(session({secret: '1234qwerasdfzxcvvcxzfdsarewq4321'}));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -36,6 +55,7 @@ passport.deserializeUser(function(obj, done) {
 app.get('/me', function(req, res){
   res.send(req.user);
 });
+//---------------END OAUTH WITH FACEBOOK-----------------
 
 app.listen(3003, function() {
   console.log('listening on 3003');
