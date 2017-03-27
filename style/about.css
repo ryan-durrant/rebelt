@@ -25,6 +25,13 @@
   font-size: 0;
 }
 
+#background-img {
+  height: 600px;
+    background-image: url(./../../img/ourTeam.jpg);
+    background-position: center bottom;
+    background-size: cover;
+}
+
 .mainContainer {
   display: flex;
   justify-content: center;
