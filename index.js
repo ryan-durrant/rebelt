@@ -13,7 +13,7 @@ var connectionString = "postgres://ryandurrant@localhost/rebelt";
 var massiveInstance = massive.connectSync({connectionString : connectionString});
 
 module.exports = app;
-// var controller = require('./controller.js');
+var controller = require('./js/controller.js');
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -21,6 +21,10 @@ app.use(cors());
 app.set('db', massiveInstance);
 //massive looks for a folder named db where it looks for the sql queries
 var db = app.get('db');
+
+app.post('/api/customer', controller.Create);
+app.post('/api/order', controller.NewOrder);
+app.put('/api/customer/email/:customerId', controller.UpdateEmail);
 
 
 //---------------OAUTH WITH FACEBOOK-----------------
