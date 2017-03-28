@@ -18,6 +18,11 @@ var app = angular.module('app', ['ui.router'])
         templateUrl: "./js/views/womens_belts.html"
       })
       .state({
+        name: 'kids_belts',
+        url: '/kids',
+        templateUrl: "./js/views/kids_belts.html"
+      })
+      .state({
         name: 'about',
         url: '/about',
         templateUrl: "./js/views/about_us.html"
