@@ -22,8 +22,12 @@ app.set('db', massiveInstance);
 //massive looks for a folder named db where it looks for the sql queries
 var db = app.get('db');
 
+app.get('/api/products/men', controller.GetMens);
+app.get('/api/products/women', controller.GetWomens);
+app.get('/api/products/kids', controller.GetKids);
+app.get('/api/orders', controller.GetOrders);
 app.post('/api/customer', controller.Create);
-app.post('/api/order', controller.NewOrder);
+app.post('/api/neworder', controller.NewOrder);
 app.put('/api/customer/email/:customerId', controller.UpdateEmail);
 
 

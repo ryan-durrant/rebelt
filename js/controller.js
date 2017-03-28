@@ -28,5 +28,37 @@ module.exports = {
       console.log(err, order);
       res.json("Successfully added a new order");
     });
+  },
+  GetMens: function(req, res, next){
+    var db = app.get('db');
+
+    db.get_mens(function(err, products){
+      console.log(err, products);
+      res.json(products);
+    });
+  },
+  GetWomens: function(req, res, next){
+    var db = app.get('db');
+
+    db.get_womens(function(err, products){
+      console.log(err, products);
+      res.json(products);
+    });
+  },
+  GetKids: function(req, res, next){
+    var db = app.get('db');
+
+    db.get_kids(function(err, products){
+      console.log(err, products);
+      res.json(products);
+    });
+  },
+  GetOrders: function(req, res, next){
+    var db = app.get('db');
+
+    db.get_orders(function(err, orders){
+      console.log(err, orders);
+      res.json(orders);
+    });
   }
 };
