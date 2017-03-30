@@ -8,6 +8,13 @@ var FacebookStrategy = require('passport-facebook').Strategy;
 
 var app = express();
 
+var cloudinary = require('cloudinary'); //image hosting service
+cloudinary.config({
+  cloud_name: 'darrwzc2q',
+  api_key: '145238182128451',
+  api_secret: 'afnC-9bW_lscMDfFQU-55tv8yzs'
+});
+
 //-------------------DATABASE-----------------------
 var connectionString = "postgres://ryandurrant@localhost/rebelt";
 var massiveInstance = massive.connectSync({connectionString : connectionString});
