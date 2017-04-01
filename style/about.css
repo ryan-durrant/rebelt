@@ -27,8 +27,8 @@
 
 #background-img {
   height: 600px;
-    background-image: url(./../../img/ourTeam.jpg);
-    background-position: center bottom;
+    background-image: url(http://res.cloudinary.com/darrwzc2q/image/upload/v1490880624/about_us_sh9d3f.jpg);
+    background-position: center top;
     background-size: cover;
 }
 
