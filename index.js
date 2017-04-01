@@ -7,6 +7,8 @@ var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
 
 var app = express();
+//app.use(express.static('rebelt'));
+//express.static looks for the root folder and then finds the index.html
 
 var cloudinary = require('cloudinary'); //image hosting service
 cloudinary.config({
@@ -20,7 +22,7 @@ var connectionString = "postgres://ryandurrant@localhost/rebelt";
 var massiveInstance = massive.connectSync({connectionString : connectionString});
 
 module.exports = app;
-var controller = require('./js/controller.js');
+var endpoint = require('./js/server_endpoints.js');
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -29,13 +31,13 @@ app.set('db', massiveInstance);
 //massive looks for a folder named db where it looks for the sql queries
 var db = app.get('db');
 
-app.get('/api/products/men', controller.GetMens);
-app.get('/api/products/women', controller.GetWomens);
-app.get('/api/products/kids', controller.GetKids);
-app.get('/api/orders', controller.GetOrders);
-app.post('/api/customer', controller.Create);
-app.post('/api/neworder', controller.NewOrder);
-app.put('/api/customer/email/:customerId', controller.UpdateEmail);
+app.get('/api/products/men', endpoint.GetMens);
+app.get('/api/products/women', endpoint.GetWomens);
+app.get('/api/products/kids', endpoint.GetKids);
+app.get('/api/orders', endpoint.GetOrders);
+app.post('/api/customer', endpoint.Create);
+app.post('/api/neworder', endpoint.NewOrder);
+app.put('/api/customer/email/:customerId', endpoint.UpdateEmail);
 
 
 //---------------OAUTH WITH FACEBOOK-----------------
