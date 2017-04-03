@@ -1,9 +1,9 @@
 //This is a server side controller
 var app = require('./../../index');
-var db = app.get('db');
 
 module.exports = {
   Create: function(req, res, next){
+    var db = app.get('db');
 
     db.create_customer([req.query.f_name, req.query.l_name, req.query.email, req.query.password], function(err, customers){
       console.log(err, customers);
@@ -11,6 +11,7 @@ module.exports = {
     });
   },
   UpdateEmail: function(req, res, next){
+    var db = app.get('db');
 
     db.update_email([req.params.customer_id, req.query.email], function(err, customers){
       console.log(err, customers);
@@ -18,6 +19,7 @@ module.exports = {
     });
   },
   NewOrder: function(req, res, next){
+    var db = app.get('db');
 
     db.new_order([req.query.customer_id, req.query.date, req.query.total], function(err, order){
       console.log(err, order);
@@ -33,6 +35,7 @@ module.exports = {
     });
   },
   GetWomens: function(req, res, next){
+    var db = app.get('db');
 
     db.get_womens(function(err, products){
       console.log(err, products);
@@ -40,6 +43,7 @@ module.exports = {
     });
   },
   GetKids: function(req, res, next){
+    var db = app.get('db');
 
     db.get_kids(function(err, products){
       console.log(err, products);
@@ -47,6 +51,7 @@ module.exports = {
     });
   },
   GetOrders: function(req, res, next){
+    var db = app.get('db');
 
     db.get_orders(function(err, orders){
       console.log(err, orders);

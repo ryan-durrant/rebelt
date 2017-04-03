@@ -76,3 +76,11 @@ footer ul li a:hover {
 .btn {
   background-color: #3B5998;
 }
+
+.productTitle {
+  text-transform: uppercase;
+}
+
+.productPrice {
+  font-weight: bold;
+}

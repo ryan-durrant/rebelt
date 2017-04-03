@@ -16,12 +16,14 @@ var app = angular.module('app', ['ui.router'])
       .state({
         name: 'womens_belts',
         url: '/womens',
-        templateUrl: "./js/views/womens_belts.html"
+        templateUrl: "./js/views/womens_belts.html",
+        controller: "mainCtrl"
       })
       .state({
         name: 'kids_belts',
         url: '/kids',
-        templateUrl: "./js/views/kids_belts.html"
+        templateUrl: "./js/views/kids_belts.html",
+        controller: "mainCtrl"
       })
       .state({
         name: 'about',

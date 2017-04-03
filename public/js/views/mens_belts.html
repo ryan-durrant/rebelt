@@ -1,63 +1,12 @@
 <div class="container">
-  <div class="section main-section">
-    <h3>Men's Belts</h3>
-  </div>
-  {{mensProducts}}
-
-  <div class="row">
-    <div class="col s3">
-      <img class="responsive-img" src="http://res.cloudinary.com/darrwzc2q/image/upload/v1490880407/tiny_hleihk.jpg" alt="">
+    <div class="section main-section">
+        <h3>Men's Belts</h3>
     </div>
-    <div class="col s3">
-      <img class="responsive-img" src="http://res.cloudinary.com/darrwzc2q/image/upload/v1490880407/tiny_hleihk.jpg" alt="">
+    <div class="row">
+        <div class="col s3" ng-repeat="product in mensProducts track by product.id">
+            <img class="responsive-img" ng-src="{{product.image_url}}">
+            <h6 class="productTitle">{{product.name}}</h5>
+            <h6 class="productPrice">{{product.price}}</h6>
+        </div>
     </div>
-    <div class="col s3">
-      <img class="responsive-img" src="http://res.cloudinary.com/darrwzc2q/image/upload/v1490880407/tiny_hleihk.jpg" alt="">
-    </div>
-    <div class="col s3">
-      <img class="responsive-img" src="http://res.cloudinary.com/darrwzc2q/image/upload/v1490880407/tiny_hleihk.jpg" alt="">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col s3">
-      <img class="responsive-img" src="http://res.cloudinary.com/darrwzc2q/image/upload/v1490880407/tiny_hleihk.jpg" alt="">
-    </div>
-    <div class="col s3">
-      <img class="responsive-img" src="http://res.cloudinary.com/darrwzc2q/image/upload/v1490880407/tiny_hleihk.jpg" alt="">
-    </div>
-    <div class="col s3">
-      <img class="responsive-img" src="http://res.cloudinary.com/darrwzc2q/image/upload/v1490880407/tiny_hleihk.jpg" alt="">
-    </div>
-    <div class="col s3">
-      <img class="responsive-img" src="http://res.cloudinary.com/darrwzc2q/image/upload/v1490880407/tiny_hleihk.jpg" alt="">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col s3">
-      <img class="responsive-img" src="http://res.cloudinary.com/darrwzc2q/image/upload/v1490880407/tiny_hleihk.jpg" alt="">
-    </div>
-    <div class="col s3">
-      <img class="responsive-img" src="http://res.cloudinary.com/darrwzc2q/image/upload/v1490880407/tiny_hleihk.jpg" alt="">
-    </div>
-    <div class="col s3">
-      <img class="responsive-img" src="http://res.cloudinary.com/darrwzc2q/image/upload/v1490880407/tiny_hleihk.jpg" alt="">
-    </div>
-    <div class="col s3">
-      <img class="responsive-img" src="http://res.cloudinary.com/darrwzc2q/image/upload/v1490880407/tiny_hleihk.jpg" alt="">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col s3">
-      <img class="responsive-img" src="http://res.cloudinary.com/darrwzc2q/image/upload/v1490880407/tiny_hleihk.jpg" alt="">
-    </div>
-    <div class="col s3">
-      <img class="responsive-img" src="http://res.cloudinary.com/darrwzc2q/image/upload/v1490880407/tiny_hleihk.jpg" alt="">
-    </div>
-    <div class="col s3">
-      <img class="responsive-img" src="http://res.cloudinary.com/darrwzc2q/image/upload/v1490880407/tiny_hleihk.jpg" alt="">
-    </div>
-    <div class="col s3">
-      <img class="responsive-img" src="http://res.cloudinary.com/darrwzc2q/image/upload/v1490880407/tiny_hleihk.jpg" alt="">
-    </div>
-  </div>
 </div>
