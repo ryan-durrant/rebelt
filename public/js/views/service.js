@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 angular.module('app').factory('app_service', function($http){
   return {
     getMens: function() {
@@ -13,6 +15,10 @@ angular.module('app').factory('app_service', function($http){
 
     getKids: function() {
       return $http.get('/api/products/kids');
+    },
+
+    getProduct: function(id) {
+      return $http.get(`/api/products/${id}`);
     }
 
   };

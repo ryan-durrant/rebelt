@@ -36,6 +36,7 @@ var db = app.get('db');
 app.get('/api/products/men', endpoint.GetMens);
 app.get('/api/products/women', endpoint.GetWomens);
 app.get('/api/products/kids', endpoint.GetKids);
+app.get('/api/products/:id', endpoint.GetProduct);
 app.get('/api/orders', endpoint.GetOrders);
 app.post('/api/customer', endpoint.Create);
 app.post('/api/neworder', endpoint.NewOrder);

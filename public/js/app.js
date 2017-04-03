@@ -29,6 +29,12 @@ var app = angular.module('app', ['ui.router'])
         name: 'about',
         url: '/about',
         templateUrl: "./js/views/about_us.html"
+      })
+      .state({
+        name: 'singleProduct',
+        url: '/product_details',
+        templateUrl: "./js/views/single_product.html",
+        controller: "mainCtrl"
       });
 
       //MUST DO!!! This sends your page to the home state upon arrival.

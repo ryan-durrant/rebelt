@@ -26,6 +26,14 @@ module.exports = {
       res.json("Successfully added a new order");
     });
   },
+  GetProduct: function(req, res, next){
+    var db = app.get('db');
+
+    db.get_product(req.params.id, function(err, product){
+      console.log(err, product);
+      res.json(product);
+    });
+  },
   GetMens: function(req, res, next){
     var db = app.get('db');
 
