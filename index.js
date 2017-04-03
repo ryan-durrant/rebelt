@@ -9,7 +9,7 @@ var path = require('path');
 
 var app = express();
 //server.use(express.static(path.resolve(__dirname, 'client')));
-app.use(express.static(path.resolve(__dirname, 'rebelt')));
+app.use(express.static(path.resolve(__dirname, 'public')));
 //express.static looks for the root folder and then finds the index.html
 
 var cloudinary = require('cloudinary'); //image hosting service
@@ -24,7 +24,7 @@ var connectionString = "postgres://ryandurrant@localhost/rebelt";
 var massiveInstance = massive.connectSync({connectionString : connectionString});
 
 module.exports = app;
-var endpoint = require('./js/server_endpoints.js');
+var endpoint = require('./public/js/server_endpoints.js');
 
 app.use(bodyParser.json());
 app.use(cors());

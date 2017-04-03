@@ -1,5 +1,5 @@
 //This is a server side controller
-var app = require('./../index');
+var app = require('./../../index');
 var db = app.get('db');
 
 module.exports = {
