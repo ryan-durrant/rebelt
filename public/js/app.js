@@ -5,7 +5,7 @@ var app = angular.module('app', ['ui.router'])
         name: 'home',
         url:'/',
         templateUrl: "./js/views/home.html",
-        controller: "controller"
+        // controller: "controller"
       })
       .state({
         name: 'mens_belts',

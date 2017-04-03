@@ -5,9 +5,11 @@ var cors = require('cors');
 var massive = require('massive');
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
+var path = require('path');
 
 var app = express();
-//app.use(express.static('rebelt'));
+//server.use(express.static(path.resolve(__dirname, 'client')));
+app.use(express.static(path.resolve(__dirname, 'rebelt')));
 //express.static looks for the root folder and then finds the index.html
 
 var cloudinary = require('cloudinary'); //image hosting service
