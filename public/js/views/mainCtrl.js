@@ -15,13 +15,17 @@ angular.module('app').controller('mainCtrl', function($scope, app_service){
       $scope.kidsProducts = response.data;
     });
 
-  $scope.getProduct = function(id){
-    app_service.getProduct(id)
-    .then(function singleProduct(response){
-      console.log(response.data[0]);
-        $scope.singleProduct = response.data[0];
-       console.log($scope.singleProduct);
-    });
-  };
+  // $scope.getProduct = function(id){
+  //   app_service.getProduct(id)
+  //   .then(function singleProduct(response){
+  //     console.log('Response:', response.data[0]);
+  //     $scope.singleProduct = response.data[0];
+  //     // return response.data[0];
+  //   });
+  // };
+
+  // console.log('singleProd', $scope.singleProduct);
+  // console.log($scope.getProduct());
+
 
 });
