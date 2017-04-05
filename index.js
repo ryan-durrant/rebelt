@@ -58,7 +58,7 @@ passport.use(new FacebookStrategy({
 
 app.get('/auth/facebook', passport.authenticate('facebook'));
 app.get('/auth/facebook/callback', passport.authenticate('facebook', {
-  successRedirect: '/me',
+  successRedirect: '/facebook/success',
   failureRedirect: '/auth/facebook'
 }), function(req, res) {
   console.log(req.session);
@@ -72,8 +72,10 @@ passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
 
-app.get('/me', function(req, res){
-  res.send(req.user);
+app.get('/facebook/success', function(req, res){
+  console.log(req.user);
+  //res.send(req.user);
+  res.send(req.user.displayName);
 });
 //---------------END OAUTH WITH FACEBOOK-----------------
 
