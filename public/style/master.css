@@ -73,8 +73,13 @@ footer ul li a:hover {
   text-decoration: underline;
 }
 
-.btn {
+.btn-facebook {
   background-color: #3B5998;
+}
+
+.btn-cart {
+  background-color: #000;
+  width: 70%;
 }
 
 .productTitle {

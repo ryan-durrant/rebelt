@@ -23,9 +23,17 @@ angular.module('app').controller('mainCtrl', function($scope, app_service){
   //     // return response.data[0];
   //   });
   // };
+  //THIS DIDN'T WORK BC THE CONTROLLER RESETS EVERYTIME A NEW PAGE PULLS UP
+  //THE DATA HAD TO SUBSIST ON THE SERVICE.
 
-  // console.log('singleProd', $scope.singleProduct);
-  // console.log($scope.getProduct());
-
+  // $scope.getProduct = function(id){
+  //   app_service.getProduct(id);
+  //   // $scope.oneProd = app_service.oneProduct;
+  //   // console.log('Second', $scope.oneProd);
+  // }; //PUTS THE PRODUCT ON THE product key on the service.
+  // // $scope.getProduct();
+  // console.log($scope.oneProd);
+  //
+  // $scope.oneProd = app_service.oneProduct;
 
 });

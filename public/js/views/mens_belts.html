@@ -4,8 +4,7 @@
     </div>
     <div class="row">
         <div class="col s3" ng-repeat="product in mensProducts track by product.id">
-            {{product.id}}
-            <a ui-sref="singleProduct" ng-click='getProduct(product.id)'><img class="responsive-img" ng-src="{{product.image_url}}"></a>
+            <a ui-sref="singleProduct({id: product.id})"><img class="responsive-img" ng-src="{{product.image_url}}"></a>
             <h6 class="productTitle">{{product.name}}</h5>
             <h6 class="productPrice">{{product.price}}</h6>
         </div>
