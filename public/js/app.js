@@ -35,6 +35,11 @@ var app = angular.module('app', ['ui.router'])
         url: '/product_details/:id',
         templateUrl: "./js/views/single_product.html",
         controller: "productCtrl"
+      })
+      .state({
+        name: 'contactUs',
+        url: '/contact',
+        templateUrl: "./js/views/contact_us.html"
       });
 
       //MUST DO!!! This sends your page to the home state upon arrival.

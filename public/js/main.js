@@ -3,12 +3,14 @@
 jQuery(document).ready(function($){
 	console.log("ready");
 
-	$('#cartBtn').click(function(){
-		$("#myModal").leanModal();
-	});
+	// $('#cartBtn').click(function(){
+	// 	$("#myModal").leanModal();
+	// });
+	//
+	// $("#myModal").modal('open');
 
-	$("#myModal").modal('open');
-
+	 $('select').material_select();
+	 
 	var formModal = $('.cd-user-modal'),
 		formLogin = formModal.find('#cd-login'),
 		formSignup = formModal.find('#cd-signup'),
