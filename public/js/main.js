@@ -3,13 +3,6 @@
 jQuery(document).ready(function($){
 	console.log("ready");
 
-	// $('#cartBtn').click(function(){
-	// 	$("#myModal").leanModal();
-	// });
-	//
-	// $("#myModal").modal('open');
-
-
 	var formModal = $('.cd-user-modal'),
 		formLogin = formModal.find('#cd-login'),
 		formSignup = formModal.find('#cd-signup'),

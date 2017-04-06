@@ -6,4 +6,10 @@ angular.module('app').controller('productCtrl', function($scope, $stateParams, a
       $scope.oneProd = response.data[0];
     });
 
+    $scope.load = function() {
+      //jquery won't initialize the select form as expected because of the routing
+      //that is why we add a controller for the page that is routed in.
+      $("#myModal").modal();
+    };
+    $scope.load();
 });
