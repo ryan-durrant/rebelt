@@ -9,8 +9,7 @@ jQuery(document).ready(function($){
 	//
 	// $("#myModal").modal('open');
 
-	 $('select').material_select();
-	 
+
 	var formModal = $('.cd-user-modal'),
 		formLogin = formModal.find('#cd-login'),
 		formSignup = formModal.find('#cd-signup'),
