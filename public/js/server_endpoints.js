@@ -1,5 +1,6 @@
 //This is a server side controller
 var app = require('./../../index');
+//I need to require the index.js file to Massive
 
 module.exports = {
   Create: function(req, res, next){

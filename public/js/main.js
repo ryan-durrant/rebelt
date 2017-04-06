@@ -1,3 +1,5 @@
+// ############### JQUERY FOR THE LOGIN AND SIGNUP MODAL #################
+
 //credits https://codyhouse.co/gem/loginsignup-modal-window/
 /* jshint expr: true */
 jQuery(document).ready(function($){

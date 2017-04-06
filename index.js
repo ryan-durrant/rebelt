@@ -8,7 +8,6 @@ var FacebookStrategy = require('passport-facebook').Strategy;
 var path = require('path');
 
 var app = express();
-//server.use(express.static(path.resolve(__dirname, 'client')));
 app.use(express.static(path.resolve(__dirname, 'public')));
 //express.static looks for the root folder and then finds the index.html
 
@@ -74,7 +73,7 @@ passport.deserializeUser(function(obj, done) {
 
 app.get('/facebook/success', function(req, res){
   console.log(req.user);
-  //res.send(req.user);
+  //res.json(req.user);
   res.send(req.user.displayName);
 });
 //---------------END OAUTH WITH FACEBOOK-----------------
