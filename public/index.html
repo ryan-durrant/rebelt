@@ -140,8 +140,8 @@
     <!-- cd-user-modal -->
     <!-- ==============THE END================== -->
 
-
-    <ui-view></ui-view>
+<!-- The class="ng-view" autoscroll makes it so when you route to a new page it scrolls up to this point -->
+    <ui-view class="ng-view" autoscroll="true"></ui-view>
 
     <footer class="page-footer">
         <div class="container">
@@ -176,6 +176,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="./node_modules/materialize-css/dist/js/materialize.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js"></script>
+    <!-- Angular-route.js is just making the scrolling work with ng-view -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-route.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
     <!-- <script src="node_modules/ui-router"></script> -->
 
