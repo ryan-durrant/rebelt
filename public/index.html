@@ -16,7 +16,7 @@
 
 <body>
     <nav>
-        <div class="nav-wrapper">
+        <div class="nav-wrapper" id="scrollTarget">
             <a ui-sref="home"><img src="img/2-logo.jpg" alt="rebelt logo" class="brand-logo center"></a>
             <ul class="left hide-on-med-and-down">
                 <li><a class='navSpacing' ui-sref="mens_belts">MEN</a></li>
@@ -140,8 +140,7 @@
     <!-- cd-user-modal -->
     <!-- ==============THE END================== -->
 
-<!-- The class="ng-view" autoscroll makes it so when you route to a new page it scrolls up to this point -->
-    <ui-view class="ng-view" autoscroll="true"></ui-view>
+    <ui-view></ui-view>
 
     <footer class="page-footer">
         <div class="container">
@@ -157,11 +156,11 @@
                 <div class="col l4 offset-l2 s12">
                     <!-- <h5 class="white-text">Links</h5> -->
                     <ul>
-                        <li><a class="grey-text text-lighten-3" ui-sref="mens_belts">Men</a></li>
-                        <li><a class="grey-text text-lighten-3" ui-sref="womens_belts">Women</a></li>
-                        <li><a class="grey-text text-lighten-3" ui-sref="kids_belts">Kids</a></li>
-                        <li><a class="grey-text text-lighten-3" ui-sref="about">About Us</a></li>
-                        <li><a class="grey-text text-lighten-3" ui-sref="contactUs">Contact Us</a></li>
+                        <li><a class="grey-text text-lighten-3" ui-sref="mens_belts({'#': 'scrollTarget'})">Men</a></li>
+                        <li><a class="grey-text text-lighten-3" ui-sref="womens_belts({'#': 'scrollTarget'})">Women</a></li>
+                        <li><a class="grey-text text-lighten-3" ui-sref="kids_belts({'#': 'scrollTarget'})">Kids</a></li>
+                        <li><a class="grey-text text-lighten-3" ui-sref="about({'#': 'scrollTarget'})">About Us</a></li>
+                        <li><a class="grey-text text-lighten-3" ui-sref="contactUs({'#': 'scrollTarget'})">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -176,11 +175,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="./node_modules/materialize-css/dist/js/materialize.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js"></script>
-    <!-- Angular-route.js is just making the scrolling work with ng-view -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-route.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
-    <!-- <script src="node_modules/ui-router"></script> -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.js" charset="utf-8"></script>
 
 
     <script src="./../js/app.js" charset="utf-8"></script>

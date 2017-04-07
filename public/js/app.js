@@ -1,11 +1,11 @@
-var app = angular.module('app', ['ui.router'])
+var app = angular.module('app', ['ui.router', 'ngCookies'])
   .config(function($stateProvider, $urlRouterProvider){
     $stateProvider
       .state({
         name: 'home',
         url:'/',
         templateUrl: "./js/views/home.html",
-        // controller: "controller"
+        controller: "mainCtrl"
       })
       .state({
         name: 'mens_belts',

@@ -1,4 +1,4 @@
-angular.module('app').controller('mainCtrl', function($scope, app_service){
+angular.module('app').controller('mainCtrl', function($scope, app_service, $cookies){
 
 //goes to the service which hits the API endpoint and serves a promise back.
   app_service.getMens()
@@ -18,5 +18,7 @@ angular.module('app').controller('mainCtrl', function($scope, app_service){
     .then(function kidsProducts(response){
       $scope.kidsProducts = response.data;
     });
+
+  console.log($cookies.getAll());
 
 });
