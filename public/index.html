@@ -82,8 +82,14 @@
                 <a href="http://localhost:3003/auth/facebook/" class="waves-effect waves-light btn btn-facebook"><i class="fa fa-facebook-square material-icons left"></i>Sign up with Facebook</a>
                 <form class="cd-form">
                     <p class="fieldset">
-                        <label class="image-replace cd-username" for="signup-username">Username</label>
-                        <input class="full-width has-padding has-border" id="signup-username" type="text" placeholder="Username">
+                        <label class="image-replace cd-username" for="signup-firstname">First name</label>
+                        <input class="full-width has-padding has-border" id="signup-firstname" type="text" placeholder="First Name">
+                        <span class="cd-error-message">Error message here!</span>
+                    </p>
+
+                    <p class="fieldset">
+                        <label class="image-replace cd-username" for="signup-lastname">Last name</label>
+                        <input class="full-width has-padding has-border" id="signup-lastname" type="text" placeholder="Last Name">
                         <span class="cd-error-message">Error message here!</span>
                     </p>
 
@@ -101,8 +107,12 @@
                     </p>
 
                     <p class="fieldset">
-                        <input type="checkbox" id="accept-terms">
-                        <!-- <label for="accept-terms">I agree to the <a href="#0">Terms</a></label> -->
+                        <input type="checkbox" id="accept-terms" checked>
+                        <label for="accept-terms">Please add me to the Rebelt newsletter list to receive online exclusives.</label>
+                    </p>
+
+                    <p class="fieldset privacy">
+                      Rebelt does not share or sell personal info.
                     </p>
 
                     <p class="fieldset">
