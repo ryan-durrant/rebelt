@@ -33,6 +33,7 @@ app.set('db', massiveInstance);
 //massive looks for a folder named db where it looks for the sql queries
 var db = app.get('db');
 
+app.get('/api/products', endpoint.GetProducts);
 app.get('/api/products/men', endpoint.GetMens);
 app.get('/api/products/women', endpoint.GetWomens);
 app.get('/api/products/kids', endpoint.GetKids);

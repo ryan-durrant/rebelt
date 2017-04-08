@@ -35,6 +35,13 @@ module.exports = {
       res.json(product);
     });
   },
+  GetProducts: function(req, res, next){
+    var db = app.get('db');
+
+    db.get_products(function(err, products){
+      res.json(products);
+    });
+  },
   GetMens: function(req, res, next){
     var db = app.get('db');
 

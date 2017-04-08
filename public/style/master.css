@@ -77,6 +77,10 @@ footer ul li a:hover {
   background-color: #3B5998;
 }
 
+.btn-facebook:hover {
+  background-color: #3B5998;
+}
+
 .btn-cart {
   background-color: #000;
   width: 70%;

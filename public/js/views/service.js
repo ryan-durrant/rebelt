@@ -21,6 +21,10 @@ angular.module('app').factory('app_service', function($http){
 
     getProduct: function(id) {
       return $http.get(`/api/products/${id}`);
+    },
+
+    getProducts: function() {
+      return $http.get('/api/products');
     }
 
   };

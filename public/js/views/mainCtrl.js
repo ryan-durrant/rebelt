@@ -19,6 +19,11 @@ angular.module('app').controller('mainCtrl', function($scope, app_service, $cook
       $scope.kidsProducts = response.data;
     });
 
+  app_service.getProducts()
+    .then(function allProducts(response){
+      $scope.allProducts = response.data;
+    });
+
   console.log($cookies.getAll());
 
 });
