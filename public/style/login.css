@@ -406,3 +406,8 @@ xsigin/signup popup
 #cd-login.is-selected, #cd-signup.is-selected, #cd-reset-password.is-selected {
   display: block;
 }
+
+#modalButton {
+  width: 100%;
+  height: 50px;
+}
