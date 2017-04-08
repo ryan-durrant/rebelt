@@ -25,6 +25,11 @@ angular.module('app').factory('app_service', function($http){
 
     getProducts: function() {
       return $http.get('/api/products');
+    },
+
+    createCustomer: function(customer) {
+      return $http.post('/api/customer', customer);
+      //The second argument of this AJAX call is req.body
     }
 
   };

@@ -3,14 +3,17 @@ var app = require('./../../index');
 //I need to require the index.js file to Massive
 
 module.exports = {
-  Create: function(req, res, next){
+  CreateCustomer: function(req, res, next){
     var db = app.get('db');
+    var newsletter = (req.body.newsletter ? 1: 0);
+    //this is a turnary operator (an if/else that is an expression), if req.body.newsletter is true then it is 1 else it is 0
 
-    db.create_customer([req.query.f_name, req.query.l_name, req.query.email, req.query.password], function(err, customers){
+    db.create_customer([req.body.f_name, req.body.l_name, req.body.email, req.body.password, newsletter], function(err, customers){
       console.log(err, customers);
       res.json("Successfully added a new customer");
     });
   },
+
   UpdateEmail: function(req, res, next){
     var db = app.get('db');
 
@@ -19,6 +22,7 @@ module.exports = {
       res.json("Succesfully updated the product at ID: " + req.params.customerId);
     });
   },
+
   NewOrder: function(req, res, next){
     var db = app.get('db');
 
@@ -27,6 +31,7 @@ module.exports = {
       res.json("Successfully added a new order");
     });
   },
+
   GetProduct: function(req, res, next){
     var db = app.get('db');
 
@@ -35,6 +40,7 @@ module.exports = {
       res.json(product);
     });
   },
+
   GetProducts: function(req, res, next){
     var db = app.get('db');
 
@@ -42,6 +48,7 @@ module.exports = {
       res.json(products);
     });
   },
+
   GetMens: function(req, res, next){
     var db = app.get('db');
 
@@ -50,6 +57,7 @@ module.exports = {
       res.json(products);
     });
   },
+
   GetWomens: function(req, res, next){
     var db = app.get('db');
 
@@ -58,6 +66,7 @@ module.exports = {
       res.json(products);
     });
   },
+
   GetKids: function(req, res, next){
     var db = app.get('db');
 
@@ -66,6 +75,7 @@ module.exports = {
       res.json(products);
     });
   },
+
   GetOrders: function(req, res, next){
     var db = app.get('db');
 
@@ -74,4 +84,5 @@ module.exports = {
       res.json(orders);
     });
   }
+
 };

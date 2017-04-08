@@ -24,6 +24,10 @@ angular.module('app').controller('mainCtrl', function($scope, app_service, $cook
       $scope.allProducts = response.data;
     });
 
+  $scope.newCustomer = function(){
+    app_service.createCustomer($scope.customerData);
+  };
+
   console.log($cookies.getAll());
 
 });

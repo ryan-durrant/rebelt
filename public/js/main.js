@@ -94,6 +94,7 @@ jQuery(document).ready(function($){
 		formForgotPassword.addClass('is-selected');
 	}
 });
+
   //credits http://css-tricks.com/snippets/jquery/move-cursor-to-end-of-textarea-or-input/
 jQuery.fn.putCursorAtEnd = function() {
 	return this.each(function() {

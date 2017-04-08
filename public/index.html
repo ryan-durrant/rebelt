@@ -14,7 +14,7 @@
 
 </head>
 
-<body>
+<body ng-controller='mainCtrl'>
     <nav>
         <div class="nav-wrapper" id="scrollTarget">
             <a ui-sref="home"><img src="img/2-logo.jpg" alt="rebelt logo" class="brand-logo center"></a>
@@ -82,31 +82,31 @@
                 <form class="cd-form">
                     <p class="fieldset">
                         <label class="image-replace cd-username" for="signup-firstname">First name</label>
-                        <input class="full-width has-padding has-border" id="signup-firstname" type="text" placeholder="First Name">
+                        <input ng-model="customerData.f_name" class="full-width has-padding has-border" id="signup-firstname" type="text" placeholder="First Name">
                         <span class="cd-error-message">Error message here!</span>
                     </p>
 
                     <p class="fieldset">
                         <label class="image-replace cd-username" for="signup-lastname">Last name</label>
-                        <input class="full-width has-padding has-border" id="signup-lastname" type="text" placeholder="Last Name">
+                        <input ng-model="customerData.l_name" class="full-width has-padding has-border" id="signup-lastname" type="text" placeholder="Last Name">
                         <span class="cd-error-message">Error message here!</span>
                     </p>
 
                     <p class="fieldset">
                         <label class="image-replace cd-email" for="signup-email">E-mail</label>
-                        <input class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+                        <input ng-model="customerData.email" class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
                         <span class="cd-error-message">Error message here!</span>
                     </p>
 
                     <p class="fieldset">
                         <label class="image-replace cd-password" for="signup-password">Password</label>
-                        <input class="full-width has-padding has-border" id="signup-password" type="text" placeholder="Password">
+                        <input ng-model="customerData.password" class="full-width has-padding has-border" id="signup-password" type="text" placeholder="Password">
                         <a href="#0" class="hide-password">Hide</a>
                         <span class="cd-error-message">Error message here!</span>
                     </p>
 
                     <p class="fieldset">
-                        <input type="checkbox" id="accept-terms" checked>
+                        <input ng-model="customerData.newsletter" type="checkbox" id="accept-terms">
                         <label for="accept-terms">Please add me to the Rebelt newsletter list to receive online exclusives.</label>
                     </p>
 
@@ -114,7 +114,7 @@
                       Rebelt does not share or sell personal info.
                     </p>
 
-                    <button id="modalButton" class = "btn" type="button" name="button">Create account</button>
+                    <button ng-click="newCustomer()" id="modalButton" class="btn" type="button" name="button">Create account</button>
 
                 </form>
 
