@@ -30,6 +30,13 @@ angular.module('app').factory('app_service', function($http){
     createCustomer: function(customer) {
       return $http.post('/api/customer', customer);
       //The second argument of this AJAX call is req.body
+    },
+
+    shoppingCart: [],
+
+    addToCart: function() {
+      this.shoppingCart.push('hello');
+      console.log(this.shoppingCart);
     }
 
   };

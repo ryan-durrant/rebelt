@@ -15,4 +15,15 @@ angular.module('app').controller('productCtrl', function($scope, $stateParams, a
       $("#myModal").modal();
     };
     $scope.load();
+
+    $scope.shoppingCart = [];
+
+    $scope.addToCart = function(image, name, price){
+      app_service.addToCart();
+
+      // $scope.shoppingCart.push({image_url: image, name: name, price: price});
+      // console.log($scope.shoppingCart);
+      //the problem is that the data doesn't persist. Everytime I come to the controller shoppingCart is empty.
+    };
+
 });
