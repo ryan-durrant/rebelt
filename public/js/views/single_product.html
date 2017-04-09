@@ -4,7 +4,7 @@
     <h5>Successfully added <span class="productTitle">{{oneProd.name}}</span> to your cart</h4>
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Continue shopping</a>
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">View cart</a>
+      <a ui-sref="shoppingCart" class="modal-action modal-close waves-effect waves-green btn-flat">View cart</a>
     </div>
   </div>
 </div>
@@ -29,7 +29,7 @@
 
             <div class="center">
             </br>
-              <button ng-click="addToCart(oneProd.image_url, oneProd.name, oneProd.price)" data-target="myModal" id="cartBtn" class="btn btn-cart">Add to Cart</button>
+              <button ng-click="addToCart(oneProd.id, oneProd.image_url, oneProd.name, oneProd.price)" data-target="myModal" id="cartBtn" class="btn btn-cart">Add to Cart</button>
             </div>
         </div>
     </div>

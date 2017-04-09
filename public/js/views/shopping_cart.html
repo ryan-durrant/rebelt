@@ -1,0 +1,44 @@
+<div class="container">
+  <br>
+  <a ui-sref="allProducts"><button id="backButton"type="button" name="button"><i class="fa fa-angle-double-left left"></i>Continue Shopping</button></a>
+
+  <div class="row">
+    <div class="col s4">
+      <h5>PRODUCT</h5>
+    </div>
+    <!-- <div class="col s3">
+      <h5>QUANTITY</h5>
+    </div> -->
+    <div class="col s4">
+      <h5>PRICE</h5>
+    </div>
+    <div class="col s4">
+      <h5 id="totalCol">TOTAL</h5>
+    </div>
+  </div>
+
+  <hr id="raiseHR">
+
+  <div class="row">
+    <div class="col s4" ng-repeat="product in shoppingCart track by product.id">
+      <h6 id="productTitle">{{product.title}}</h6>
+      <img id="productImg" ng-src="{{product.image_url}}">
+    </div>
+    <!-- <div class="col s3">
+      <input type="text" name="" value="" placeholder="1"></input>
+    </div> -->
+    <div class="col s4" ng-repeat="product in shoppingCart track by product.id">
+      <h5>{{product.price}}</h5>
+    </div>
+
+    <div class="col s4" id="totalCol" ng-repeat="product in shoppingCart track by product.id">
+      <h5>{{product.price}}</h5>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col s4" id="totalCol">
+      <h5>{{product.total}}</h5>
+    </div>
+  </div>
+</div>

@@ -30,7 +30,7 @@ body {
 }
 
 a {
-  color: #2f889a;
+  color: rgba(0, 0, 0, 0.87);
   text-decoration: none;
 }
 

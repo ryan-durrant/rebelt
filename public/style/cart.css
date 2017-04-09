@@ -1,0 +1,29 @@
+button i {
+  color: black;
+}
+
+#backButton {
+  display: flex;
+  align-items: baseline;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+#raiseHR {
+  position: relative;
+  bottom: 20px;
+}
+
+#totalCol {
+  float: right;
+}
+
+#productTitle {
+  font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+#productImg {
+  max-width: 85%
+}

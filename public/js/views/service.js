@@ -34,9 +34,15 @@ angular.module('app').factory('app_service', function($http){
 
     shoppingCart: [],
 
-    addToCart: function() {
-      this.shoppingCart.push('hello');
+    addToCart: function(id, image, name, price) {
+      var total;
+      for (var i = 0; i < this.shoppingCart.length; i++){
+        var number = Number(this.shoppingCart[i].price.replace(/[^0-9\.]+/g,""));
+        total += number;
+      }
+      this.shoppingCart.push({id: id, image_url: image, title: name, price: price, total: total});
       console.log(this.shoppingCart);
+      return this.shoppingCart;
     }
 
   };

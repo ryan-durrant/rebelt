@@ -47,6 +47,12 @@ var app = angular.module('app', ['ui.router', 'ngCookies'])
         url: '/products',
         templateUrl: "./js/views/all_products.html",
         controller: "mainCtrl"
+      })
+      .state({
+        name: 'shoppingCart',
+        url: '/cart',
+        templateUrl: "./js/views/shopping_cart.html",
+        controller: "cartCtrl"
       });
 
       //MUST DO!!! This sends your page to the home state upon arrival.
