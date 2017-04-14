@@ -24,14 +24,21 @@
                 <li><a class='navSpacing' ui-sref="womens_belts">WOMEN</a></li>
                 <li><a class='navSpacing' ui-sref="kids_belts">KIDS</a></li>
             </ul>
-            <a class="right" id='shoppingCart' href='#'><i class="fa fa-shopping-cart fa-2x"></i></a>
+            <a class="right" id='shoppingCart' ui-sref='shoppingCart'><i class="fa fa-shopping-cart fa-2x"></i></a>
 
-            <div class="main-nav">
+            <div ng-if="!user" class="main-nav">
                 <ul class="right hide-on-med-and-down">
                     <li><a class='cd-signup navSpacing' href='/'>Register</a></li>
                     <li><a class='cd-signin navSpacing' href='/'>Log in</a></li>
                 </ul>
             </div>
+            <div ng-if="user" class="main-nav">
+                <ul class="right hide-on-med-and-down">
+                    <li style="color: black">Hi {{user.f_name}}</li>
+                    <li><button class='cd-signin navSpacing' ng-click="logout">Log Out</button></li>
+                </ul>
+            </div>
+
 
         </div>
     </nav>

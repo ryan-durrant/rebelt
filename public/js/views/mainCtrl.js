@@ -1,5 +1,7 @@
 angular.module('app').controller('mainCtrl', function($scope, app_service, $cookies){
 
+
+
 //goes to the service which hits the API endpoint and serves a promise back.
   app_service.getMens()
     .then(function mensProducts(response){
@@ -24,10 +26,37 @@ angular.module('app').controller('mainCtrl', function($scope, app_service, $cook
       $scope.allProducts = response.data;
     });
 
+
+
   $scope.newCustomer = function(){
-    app_service.createCustomer($scope.customerData);
+    //debugger;
+    app_service.createCustomer($scope.customerData).then(function(response){
+      app_service.user = response.data;
+      $scope.user = app_service.user;
+      console.log($scope.user);
+      console.log("hello luis", response);
+      angular.element("body").click();
+    });
   };
 
-  console.log($cookies.getAll());
+  // $scope.findCookieUser = function(){
+  //   if(JSON.parse($cookies.getAll().loggedInUser)){
+  //     $scope.cookieUser = JSON.parse($cookies.getAll().loggedInUser).displayName;
+  //   }
+  //   else {
+  //     $scope.cookieUser = "";
+  //   }
+  // };
+  // $scope.findCookieUser();
+
+  //$scope.cookieUser = JSON.parse($cookies.getAll().loggedInUser).displayName;
+
+  //console.log($cookies.getAll());
+  //console.log(JSON.parse($cookies.getAll().loggedInUser).displayName);
+
+
+  $scope.logout = function(){
+    $scope.user = undefined;
+  };
 
 });

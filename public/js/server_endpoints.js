@@ -8,9 +8,16 @@ module.exports = {
     var newsletter = (req.body.newsletter ? 1: 0);
     //this is a turnary operator (an if/else that is an expression), if req.body.newsletter is true then it is 1 else it is 0
 
-    db.create_customer([req.body.f_name, req.body.l_name, req.body.email, req.body.password, newsletter], function(err, customers){
-      console.log(err, customers);
-      res.json("Successfully added a new customer");
+    // db.create_customer([req.body.f_name, req.body.l_name, req.body.email, req.body.password, newsletter], function(err, customer){
+    //   console.log(err, customer);
+    //   res.json(customer);
+    // });
+    var customer = req.body;
+
+    //massive insert is the same as the db.create_customer
+    db.customers.insert(customer, function(err, response){
+
+      res.status(201).json(response);
     });
   },
 

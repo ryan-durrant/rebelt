@@ -55,7 +55,7 @@ app.use(cookieParser());
 //function runs when something is on req.user ie after someone logs in and is authenticated with Facebook.
 app.use(function(req, res, next){
   var cookie = req.cookies;
-  console.log(req.user);
+  //console.log(`Req.user is: ${req.user}`);
     if(req.user){
       //if req.user is there, node will put the object in a cookie
       res.cookie('loggedInUser', JSON.stringify(req.user));
