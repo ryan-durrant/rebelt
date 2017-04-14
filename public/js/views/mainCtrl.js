@@ -1,4 +1,4 @@
-angular.module('app').controller('mainCtrl', function($scope, app_service, $cookies){
+angular.module('app').controller('mainCtrl', function($document, $scope, app_service, $cookies){
 
 
 
@@ -33,9 +33,9 @@ angular.module('app').controller('mainCtrl', function($scope, app_service, $cook
     app_service.createCustomer($scope.customerData).then(function(response){
       app_service.user = response.data;
       $scope.user = app_service.user;
-      console.log($scope.user);
-      console.log("hello luis", response);
-      angular.element("body").click();
+      // console.log($scope.user);
+      // console.log("hello luis", response);
+      // $document.triggerHandler("mousedown");
     });
   };
 
