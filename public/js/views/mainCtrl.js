@@ -35,11 +35,6 @@ angular.module('app').controller('mainCtrl', function($document, $scope, app_ser
     });
 
     //Resets the form input boxes
-    // customerObj = $scope.customerData;
-    // for (var prop in customerObj){
-    //   customerObj[prop] = "";
-    // }
-    // console.log(customerObj);
     $scope.customerData = undefined;
   };
 
