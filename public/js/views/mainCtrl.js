@@ -33,6 +33,14 @@ angular.module('app').controller('mainCtrl', function($document, $scope, app_ser
       app_service.user = response.data;
       $scope.user = app_service.user;
     });
+
+    //Resets the form input boxes
+    // customerObj = $scope.customerData;
+    // for (var prop in customerObj){
+    //   customerObj[prop] = "";
+    // }
+    // console.log(customerObj);
+    $scope.customerData = undefined;
   };
 
   $scope.findCookieUser = function(){

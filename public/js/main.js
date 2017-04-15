@@ -14,7 +14,14 @@ jQuery(document).ready(function($){
 		tabSignup = formModalTab.children('li').eq(1).children('a'),
 		forgotPasswordLink = formLogin.find('.cd-form-bottom-message a'),
 		backToLoginLink = formForgotPassword.find('.cd-form-bottom-message a'),
-		mainNav = $('.main-nav');
+		mainNav = $('.main-nav'),
+		form = formModal.find('.cd-form'),
+		formButton = formModal.find('#modalButton');
+
+	//clear form
+	formButton.on('click', function(){
+		form.reset();
+	});
 
 	//open modal
 	mainNav.on('click', function(event){
