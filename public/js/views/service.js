@@ -46,6 +46,7 @@ angular.module('app').factory('app_service', function($http){
           //console.log(number * 1);
           total = total + number;
         }
+        total = Math.round(total*100)/100;
       }
 
       this.shoppingCart.push({id: id, image_url: image, title: name, price: price, total: total});
