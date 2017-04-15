@@ -51,7 +51,7 @@ angular.module('app').controller('mainCtrl', function($document, $scope, app_ser
 
   $scope.login = function(){
     app_service.login($scope.credentials).then(function(response){
-      app_service.user = response.data[0];
+      app_service.user = response.data;
       $scope.user = app_service.user;
     });
 
