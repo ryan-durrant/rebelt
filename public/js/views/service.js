@@ -32,7 +32,6 @@ angular.module('app').factory('app_service', function($http){
     },
 
     createCustomer: function(customer) {
-
       return $http.post('/api/customer', customer);
       //The second argument of this AJAX call is req.body
     },
@@ -44,27 +43,16 @@ angular.module('app').factory('app_service', function($http){
       if(this.shoppingCart.length > 0){
         for (var i = 0; i < this.shoppingCart.length; i++){
           var number = Number(this.shoppingCart[i].price.replace(/[^0-9\.]+/g,""));
-          console.log(number * 1);
+          //console.log(number * 1);
           total = total + number;
         }
       }
 
       this.shoppingCart.push({id: id, image_url: image, title: name, price: price, total: total});
-      console.log(this.shoppingCart);
+      //console.log(this.shoppingCart);
 
       return this.shoppingCart;
-    },
-
-    // getTotal: function(){
-    //   var total = 0;
-    //   for (var i = 0; i < this.shoppingCart.length; i++){
-    //     var number = Number(this.shoppingCart[i].price.replace(/[^0-9\.]+/g,""));
-    //     //console.log(number * 1);
-    //     total = total + number;
-    //   }
-    //   //console.log(total);
-    //   return total;
-    // }
+    }
 
   };
 });

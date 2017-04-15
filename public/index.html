@@ -26,7 +26,7 @@
             </ul>
             <a class="right" id='shoppingCart' ui-sref='shoppingCart'><i class="fa fa-shopping-cart fa-2x"></i></a>
 
-            <div ng-if="!user" class="main-nav">
+            <div ng-if="!user && !cookieUser" class="main-nav">
                 <ul class="right hide-on-med-and-down">
                     <li><a class='cd-signup navSpacing' href='/'>Register</a></li>
                     <li><a class='cd-signin navSpacing' href='/'>Log in</a></li>
@@ -34,8 +34,14 @@
             </div>
             <div ng-if="user" class="main-nav">
                 <ul class="right hide-on-med-and-down">
-                    <li style="color: black">Hi {{user.f_name}}</li>
-                    <li><button class='cd-signin navSpacing' ng-click="logout()">Log Out</button></li>
+                    <li class='navSpacing userName'>Hi {{user.f_name}}</li>
+                    <li><a class='navSpacing' ng-click="logout()">Log Out</a></li>
+                </ul>
+            </div>
+            <div ng-if="cookieUser" class="main-nav">
+                <ul class="right hide-on-med-and-down">
+                    <li class='navSpacing userName'>Hi {{cookieUserF_Name}}</li>
+                    <li><a class='navSpacing' ng-click="logout()">Log Out</a></li>
                 </ul>
             </div>
 

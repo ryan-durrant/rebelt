@@ -39,24 +39,29 @@ angular.module('app').controller('mainCtrl', function($document, $scope, app_ser
     });
   };
 
-  // $scope.findCookieUser = function(){
-  //   if(JSON.parse($cookies.getAll().loggedInUser)){
-  //     $scope.cookieUser = JSON.parse($cookies.getAll().loggedInUser).displayName;
-  //   }
-  //   else {
-  //     $scope.cookieUser = "";
-  //   }
-  // };
-  // $scope.findCookieUser();
+  $scope.findCookieUser = function(){
+    if(document.cookie.indexOf('loggedInUser') > -1){
+      $scope.cookieUser = JSON.parse($cookies.getAll().loggedInUser).displayName;
+      $scope.cookieUserF_Name = $scope.cookieUser.slice(0, $scope.cookieUser.indexOf(" "));
+      $scope.cookieUserL_Name = $scope.cookieUser.slice($scope.cookieUser.indexOf(" ") + 1);
+    }
+    else {
+      $scope.cookieUser = "";
+    }
+  };
+  $scope.findCookieUser();
 
   //$scope.cookieUser = JSON.parse($cookies.getAll().loggedInUser).displayName;
 
-  //console.log($cookies.getAll());
+  // console.log($cookies.getAll());
   //console.log(JSON.parse($cookies.getAll().loggedInUser).displayName);
 
 
   $scope.logout = function(){
+    debugger;
     $scope.user = undefined;
+    $cookies.remove('loggedInUser');
+    $scope.cookieUser = "";
   };
 
 });
