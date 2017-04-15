@@ -17,7 +17,6 @@ module.exports = {
 
     //massive insert is the same as the db.create_customer
     db.customers.insert(customer, function(err, response){
-
       res.status(201).json(response);
     });
   },

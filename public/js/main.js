@@ -79,6 +79,7 @@ jQuery(document).ready(function($){
 	}
 
 	function signup_selected(){
+		console.log("Executed");
 		mainNav.children('ul').removeClass('is-visible');
 		formModal.addClass('is-visible');
 		formLogin.removeClass('is-selected');
