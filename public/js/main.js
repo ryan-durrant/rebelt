@@ -18,11 +18,6 @@ jQuery(document).ready(function($){
 		form = formModal.find('.cd-form'),
 		formButton = formModal.find('#modalButton');
 
-	//clear form
-	formButton.on('click', function(){
-		form.reset();
-	});
-
 	//open modal
 	mainNav.on('click', function(event){
 		$(event.target).is(mainNav) && mainNav.children('ul').toggleClass('is-visible');

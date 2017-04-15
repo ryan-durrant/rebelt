@@ -28,7 +28,6 @@ angular.module('app').controller('mainCtrl', function($document, $scope, app_ser
     });
 
   $scope.newCustomer = function(){
-    //debugger;
     app_service.createCustomer($scope.customerData).then(function(response){
       app_service.user = response.data;
       $scope.user = app_service.user;
@@ -50,10 +49,15 @@ angular.module('app').controller('mainCtrl', function($document, $scope, app_ser
   };
   $scope.findCookieUser();
 
-  //$scope.cookieUser = JSON.parse($cookies.getAll().loggedInUser).displayName;
+  $scope.login = function(){
+    app_service.login($scope.credentials).then(function(response){
+      app_service.user = response.data[0];
+      $scope.user = app_service.user;
+    });
 
-  // console.log($cookies.getAll());
-  //console.log(JSON.parse($cookies.getAll().loggedInUser).displayName);
+    //Resets the form input boxes
+    $scope.credentials = undefined;
+  };
 
   $scope.logout = function(){
     $scope.user = undefined;

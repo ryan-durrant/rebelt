@@ -90,6 +90,14 @@ module.exports = {
       //console.log(err, orders);
       res.json(orders);
     });
+  },
+
+  Login: function(req, res, next){
+    var db = app.get('db');
+
+    db.login(req.body.email, function(err, customer){
+      res.status(200).json(customer);
+    });
   }
 
 };

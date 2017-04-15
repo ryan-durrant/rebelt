@@ -36,6 +36,11 @@ angular.module('app').factory('app_service', function($http){
       //The second argument of this AJAX call is req.body
     },
 
+    login: function(credentials){
+      return $http.post('/api/login', credentials);
+      //The second argument of this AJAX call is req.body
+    },
+
     shoppingCart: [],
 
     addToCart: function(id, image, name, price) {
