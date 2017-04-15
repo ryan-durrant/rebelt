@@ -1,7 +1,5 @@
 angular.module('app').controller('mainCtrl', function($document, $scope, app_service, $cookies){
 
-
-
 //goes to the service which hits the API endpoint and serves a promise back.
   app_service.getMens()
     .then(function mensProducts(response){
@@ -25,8 +23,6 @@ angular.module('app').controller('mainCtrl', function($document, $scope, app_ser
     .then(function allProducts(response){
       $scope.allProducts = response.data;
     });
-
-
 
   $scope.newCustomer = function(){
     //debugger;
@@ -56,9 +52,7 @@ angular.module('app').controller('mainCtrl', function($document, $scope, app_ser
   // console.log($cookies.getAll());
   //console.log(JSON.parse($cookies.getAll().loggedInUser).displayName);
 
-
   $scope.logout = function(){
-    debugger;
     $scope.user = undefined;
     $cookies.remove('loggedInUser');
     $scope.cookieUser = "";

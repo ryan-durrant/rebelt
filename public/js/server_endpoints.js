@@ -34,7 +34,7 @@ module.exports = {
     var db = app.get('db');
 
     db.new_order([req.query.customer_id, req.query.date, req.query.total], function(err, order){
-      console.log(err, order);
+      //console.log(err, order);
       res.json("Successfully added a new order");
     });
   },
@@ -43,7 +43,7 @@ module.exports = {
     var db = app.get('db');
 
     db.get_product(req.params.id, function(err, product){
-      console.log(err, product);
+      //console.log(err, product);
       res.json(product);
     });
   },
@@ -60,7 +60,7 @@ module.exports = {
     var db = app.get('db');
 
     db.get_mens(function(err, products){
-      console.log(err, products);
+      //console.log(err, products);
       res.json(products);
     });
   },
@@ -69,7 +69,7 @@ module.exports = {
     var db = app.get('db');
 
     db.get_womens(function(err, products){
-      console.log(err, products);
+      //console.log(err, products);
       res.json(products);
     });
   },
@@ -78,7 +78,7 @@ module.exports = {
     var db = app.get('db');
 
     db.get_kids(function(err, products){
-      console.log(err, products);
+      //console.log(err, products);
       res.json(products);
     });
   },
@@ -87,7 +87,7 @@ module.exports = {
     var db = app.get('db');
 
     db.get_orders(function(err, orders){
-      console.log(err, orders);
+      //console.log(err, orders);
       res.json(orders);
     });
   }

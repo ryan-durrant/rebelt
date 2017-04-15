@@ -55,7 +55,6 @@ app.use(cookieParser());
 //function runs when something is on req.user ie after someone logs in and is authenticated with Facebook.
 app.use(function(req, res, next){
   var cookie = req.cookies;
-  //console.log(`Req.user is: ${req.user}`);
     if(req.user){
       //if req.user is there, node will put the object in a cookie
       res.cookie('loggedInUser', JSON.stringify(req.user));
@@ -90,12 +89,15 @@ passport.deserializeUser(function(obj, done) {
   done(null, obj);
 });
 
-// app.get('/', function(req, res){
-//   //console.log(req.user);
-//   res.json(req.user);
-//   // res.send(req.user.displayName);
-// });
 //---------------END OAUTH WITH FACEBOOK-----------------
+
+//---------------LOGOUT-----------------
+app.get('/logout', function(req, res){
+  //console.log("Logging out");
+  req.logout();
+  res.redirect('/');
+});
+//--------------------
 
 app.use(express.static(path.resolve(__dirname, 'public')));
 //express.static looks for the root folder and then finds the index.html
