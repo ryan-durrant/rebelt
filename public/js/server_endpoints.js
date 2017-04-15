@@ -12,7 +12,8 @@ module.exports = {
     //   console.log(err, customer);
     //   res.json(customer);
     // });
-    var customer = req.body;
+
+    var customer = {f_name: req.body.f_name, l_name: req.body.l_name, email: req.body.email, password: req.body.password, newsletter: newsletter};
 
     //massive insert is the same as the db.create_customer
     db.customers.insert(customer, function(err, response){

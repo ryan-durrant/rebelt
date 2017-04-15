@@ -49,6 +49,13 @@ app.use(session({secret: '1234qwerasdfzxcvvcxzfdsarewq4321'}));
 app.use(passport.initialize());
 app.use(passport.session());
 
+//---------------LOGOUT-----------------
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
+//--------------------
+
       //------REQ.USER AND COOKIES-------
 app.use(cookieParser());
 //this is middleware to verify if the client sent a cookie
@@ -90,14 +97,6 @@ passport.deserializeUser(function(obj, done) {
 });
 
 //---------------END OAUTH WITH FACEBOOK-----------------
-
-//---------------LOGOUT-----------------
-app.get('/logout', function(req, res){
-  //console.log("Logging out");
-  req.logout();
-  res.redirect('/');
-});
-//--------------------
 
 app.use(express.static(path.resolve(__dirname, 'public')));
 //express.static looks for the root folder and then finds the index.html

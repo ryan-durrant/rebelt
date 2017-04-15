@@ -1,5 +1,8 @@
 angular.module('app').controller('mainCtrl', function($document, $scope, app_service, $cookies){
 
+  //SIGNUP FORM
+  //Everything is assigned to $scope.customerData keys
+
 //goes to the service which hits the API endpoint and serves a promise back.
   app_service.getMens()
     .then(function mensProducts(response){
@@ -29,9 +32,6 @@ angular.module('app').controller('mainCtrl', function($document, $scope, app_ser
     app_service.createCustomer($scope.customerData).then(function(response){
       app_service.user = response.data;
       $scope.user = app_service.user;
-      // console.log($scope.user);
-      // console.log("hello luis", response);
-      // $document.triggerHandler("mousedown");
     });
   };
 
@@ -55,6 +55,7 @@ angular.module('app').controller('mainCtrl', function($document, $scope, app_ser
   $scope.logout = function(){
     $scope.user = undefined;
     $cookies.remove('loggedInUser');
+    console.log("Cookie removed");
     $scope.cookieUser = "";
   };
 
