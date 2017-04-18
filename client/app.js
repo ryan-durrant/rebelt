@@ -4,8 +4,7 @@ var app = angular.module('app', ['ui.router', 'ngCookies'])
       .state({
         name: 'home',
         url:'/',
-        templateUrl: "./home.html",
-        controller: "authCtrl"
+        templateUrl: "./homepage/home.html"
       })
       .state({
         name: 'mens_belts',
