@@ -1,0 +1,146 @@
+<nav>
+    <div class="nav-wrapper" id="scrollTarget">
+        <a ui-sref="home"><img src="img/2-logo.jpg" alt="rebelt logo" class="brand-logo center"></a>
+        <ul class="left hide-on-med-and-down">
+            <li><a class='navSpacing' ui-sref="mens_belts">MEN</a></li>
+            <li><a class='navSpacing' ui-sref="womens_belts">WOMEN</a></li>
+            <li><a class='navSpacing' ui-sref="kids_belts">KIDS</a></li>
+        </ul>
+        <a class="right" id='shoppingCart' ui-sref='shoppingCart'><i class="fa fa-shopping-cart fa-2x"></i></a>
+
+
+        <!-- I was using ng-if instead of ng-show, the problem was that ng-if removes the node from the DOM so that when I logged out and tried to log in again the click wasn't registering which stopped the modal from showing up. Ng-show keeps the DOM and hides elements but the clicks will always be associated with those elements. The other solution would be to associate the jquery to the parent of these LI's and not the LI's themselves so that the parent would always be on the DOM and the children nodes/li's could be added and removed and the jquery would still work. -->
+        <div ng-show="!user && !cookieUser" class="main-nav">
+            <ul class="right hide-on-med-and-down">
+                <li><a class='cd-signup navSpacing' href='/'>Register</a></li>
+                <li><a class='cd-signin navSpacing' href='/'>Log in</a></li>
+            </ul>
+        </div>
+        <div ng-show="user" class="main-nav">
+            <ul class="right hide-on-med-and-down">
+                <li class='navSpacing userName'>Hi {{user.f_name}}</li>
+                <li><a class='navSpacing' ng-click="logout()">Log Out</a></li>
+            </ul>
+        </div>
+        <div ng-show="cookieUser" class="main-nav">
+            <ul class="right hide-on-med-and-down">
+                <li class='navSpacing userName'>Hi {{cookieUserF_Name}}</li>
+                <li><a href='/logout' class='navSpacing' ng-click="logout()">Log Out</a></li>
+            </ul>
+        </div>
+
+
+    </div>
+</nav>
+
+<!-- ==============SIGNUP MODAL===================== -->
+<div class="cd-user-modal">
+    <!-- this is the entire modal form, including the background -->
+    <div class="cd-user-modal-container">
+        <!-- this is the container wrapper -->
+        <ul class="cd-switcher">
+            <li><a href="#0">Sign in</a></li>
+            <li><a href="#0">New account</a></li>
+        </ul>
+
+        <div id="cd-login">
+            <!-- log in form -->
+            <a href="http://localhost:3003/auth/facebook/" class="waves-effect waves-light btn btn-facebook"><i class="fa fa-facebook-square material-icons left"></i>Sign in with Facebook</a>
+            <form class="cd-form">
+                <p class="fieldset">
+                    <label class="image-replace cd-email" for="signin-email">E-mail</label>
+                    <input ng-model="credentials.email" class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
+                    <span class="cd-error-message">Error message here!</span>
+                </p>
+
+                <p class="fieldset">
+                    <label class="image-replace cd-password" for="signin-password">Password</label>
+                    <input ng-model="credentials.password" class="full-width has-padding has-border" id="signin-password" type="text" placeholder="Password">
+                    <a href="#0" class="hide-password">Hide</a>
+                    <span class="cd-error-message">Error message here!</span>
+                </p>
+
+                <p class="fieldset">
+                    <input type="checkbox" id="remember-me" checked>
+                    <label for="remember-me">Remember me</label>
+                </p>
+
+                <button ng-click="login()" id="modalButton" class = "btn" type="button" name="button">Login</button>
+
+            </form>
+
+            <p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
+            <!-- <a href="#0" class="cd-close-form">Close</a> -->
+        </div>
+        <!-- cd-login -->
+
+        <div id="cd-signup">
+            <!-- sign up form -->
+            <a href="http://localhost:3003/auth/facebook/" class="waves-effect waves-light btn btn-facebook"><i class="fa fa-facebook-square material-icons left"></i>Sign up with Facebook</a>
+            <form class="cd-form">
+                <p class="fieldset">
+                    <label class="image-replace cd-username" for="signup-firstname">First name</label>
+                    <input ng-model="customerData.f_name" class="full-width has-padding has-border" id="signup-firstname" type="text" placeholder="First Name">
+                    <span class="cd-error-message">Error message here!</span>
+                </p>
+
+                <p class="fieldset">
+                    <label class="image-replace cd-username" for="signup-lastname">Last name</label>
+                    <input ng-model="customerData.l_name" class="full-width has-padding has-border" id="signup-lastname" type="text" placeholder="Last Name">
+                    <span class="cd-error-message">Error message here!</span>
+                </p>
+
+                <p class="fieldset">
+                    <label class="image-replace cd-email" for="signup-email">E-mail</label>
+                    <input ng-model="customerData.email" class="full-width has-padding has-border" id="signup-email" type="email" placeholder="E-mail">
+                    <span class="cd-error-message">Error message here!</span>
+                </p>
+
+                <p class="fieldset">
+                    <label class="image-replace cd-password" for="signup-password">Password</label>
+                    <input ng-model="customerData.password" class="full-width has-padding has-border" id="signup-password" type="text" placeholder="Password">
+                    <a href="#0" class="hide-password">Hide</a>
+                    <span class="cd-error-message">Error message here!</span>
+                </p>
+
+                <p class="fieldset">
+                    <input ng-model="customerData.newsletter" type="checkbox" id="accept-terms">
+                    <label for="accept-terms">Please add me to the Rebelt newsletter list to receive online exclusives.</label>
+                </p>
+
+                <p class="fieldset privacy">
+                  Rebelt does not share or sell personal info.
+                </p>
+
+                <button ng-click="newCustomer()" id="modalButton" class="btn" type="button" name="button">Create account</button>
+
+            </form>
+
+            <!-- <a href="#0" class="cd-close-form">Close</a> -->
+        </div>
+        <!-- cd-signup -->
+
+        <div id="cd-reset-password">
+            <!-- reset password form -->
+            <p class="cd-form-message">Lost your password? Please enter your email address. You will receive a link to create a new password.</p>
+
+            <form class="cd-form">
+                <p class="fieldset">
+                    <label class="image-replace cd-email" for="reset-email">E-mail</label>
+                    <input class="full-width has-padding has-border" id="reset-email" type="email" placeholder="E-mail">
+                    <span class="cd-error-message">Error message here!</span>
+                </p>
+
+                <button id="modalButton" class = "btn" type="button" name="button">Reset password</button>
+
+            </form>
+
+            <p class="cd-form-bottom-message"><a href="#0">Back to log-in</a></p>
+        </div>
+        <!-- cd-reset-password -->
+        <a href="#0" class="cd-close-form">Close</a>
+    </div>
+    <!-- cd-user-modal-container -->
+</div>
+<!-- cd-user-modal -->
+<!-- ==============THE END================== -->
