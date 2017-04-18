@@ -104,5 +104,5 @@ app.use(express.static(path.resolve(__dirname, 'client')));
 //express.static looks for the root folder and then finds the index.html
 
 app.listen(3003, function() {
-  console.log('listening on 3003');
+  console.log('Port 3003 is in use');
 });
