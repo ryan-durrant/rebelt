@@ -5,25 +5,31 @@ var app = angular.module('app', ['ui.router', 'ngCookies'])
         name: 'home',
         url:'/',
         templateUrl: "./home.html",
-        controller: "mainCtrl"
+        controller: "authCtrl"
       })
       .state({
         name: 'mens_belts',
         url:'/mens',
         templateUrl: "./products/mens_belts.html",
-        controller: "mainCtrl"
+        controller: "productsCtrl"
       })
       .state({
         name: 'womens_belts',
         url: '/womens',
         templateUrl: "./products/womens_belts.html",
-        controller: "mainCtrl"
+        controller: "productsCtrl"
       })
       .state({
         name: 'kids_belts',
         url: '/kids',
         templateUrl: "./products/kids_belts.html",
-        controller: "mainCtrl"
+        controller: "productsCtrl"
+      })
+      .state({
+        name: 'allProducts',
+        url: '/products',
+        templateUrl: "./products/all_products.html",
+        controller: "productsCtrl"
       })
       .state({
         name: 'about',
@@ -34,19 +40,13 @@ var app = angular.module('app', ['ui.router', 'ngCookies'])
         name: 'singleProduct',
         url: '/product_details/:id',
         templateUrl: "./products/single_product.html",
-        controller: "productCtrl"
+        controller: "singleProductCtrl"
       })
       .state({
         name: 'contactUs',
         url: '/contact',
         templateUrl: "./contact_us/contact_us.html",
         controller: "contactCtrl"
-      })
-      .state({
-        name: 'allProducts',
-        url: '/products',
-        templateUrl: "./products/all_products.html",
-        controller: "mainCtrl"
       })
       .state({
         name: 'shoppingCart',

@@ -1,5 +1,5 @@
 //This controller is necessary bc the data comes from the URL of the page I am on with the id of each product
-angular.module('app').controller('productCtrl', function($scope, $stateParams, app_service){
+angular.module('app').controller('singleProductCtrl', function($scope, $stateParams, app_service){
 
   // console.log($stateParams);
   //$stateParams allows me to see whatever is in the url
