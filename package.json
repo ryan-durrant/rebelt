@@ -1,7 +1,7 @@
 {
-  "name": "rebelt",
+  "name": "y",
   "version": "1.0.0",
-  "description": "",
+  "description": "Rebelt - The belt, rebuilt.",
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.17.1",
@@ -20,5 +20,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryan-durrant/rebelt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ryan-durrant/rebelt/issues"
+  },
+  "homepage": "https://github.com/ryan-durrant/rebelt#readme"
 }
