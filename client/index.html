@@ -21,36 +21,7 @@
 
     <ui-view></ui-view>
 
-    <footer class="page-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <a href="#"><h5 class="white-text">REBELT</h5></a>
-                    <p class="grey-text text-lighten-4">The belt, rebuilt.</p>
-                    <a href="#!"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
-                    <a href="#!"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
-                    <a href="#!"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
-                    <a href="#!"><i class="fa fa-snapchat fa-2x" aria-hidden="true"></i></a>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <!-- <h5 class="white-text">Links</h5> -->
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" ui-sref="mens_belts({'#': 'scrollTarget'})">Men</a></li>
-                        <li><a class="grey-text text-lighten-3" ui-sref="womens_belts({'#': 'scrollTarget'})">Women</a></li>
-                        <li><a class="grey-text text-lighten-3" ui-sref="kids_belts({'#': 'scrollTarget'})">Kids</a></li>
-                        <li><a class="grey-text text-lighten-3" ui-sref="about({'#': 'scrollTarget'})">About Us</a></li>
-                        <li><a class="grey-text text-lighten-3" ui-sref="contactUs({'#': 'scrollTarget'})">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container">
-                Copyright © 2017 Rebelt Co. All rights reserved.
-                <!-- <a class="grey-text text-lighten-4 right" href="#!">More Links</a> -->
-            </div>
-        </div>
-    </footer>
+<footer-directive></footer-directive>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="./node_modules/materialize-css/dist/js/materialize.js" charset="utf-8"></script>
@@ -59,14 +30,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.js" charset="utf-8"></script>
 
     <script src="./app.js" charset="utf-8"></script>
-    <script src="./navbar/navbar.js" charset="utf-8"></script>
+    <script src="./navbar/navbarDirective.js" charset="utf-8"></script>
+    <script src="./footer/footerDirective.js" charset="utf-8"></script>
     <script src="./products/productService.js" charset="utf-8"></script>
     <script src="./auth/authCtrl.js" charset="utf-8"></script>
     <script src="./products/singleProductCtrl.js" charset="utf-8"></script>
     <script src="./products/productsCtrl.js" charset="utf-8"></script>
     <script src="./contact_us/contactCtrl.js" charset="utf-8"></script>
     <script src="./shopping_cart/cartCtrl.js" charset="utf-8"></script>
-    <script src="./auth/modal.js"></script>
     <script src="./auth/authService.js"></script>
     <script src="./shopping_cart/cartService.js"></script>
 </body>
