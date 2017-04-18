@@ -1,9 +1,5 @@
-angular.module('app').controller('cartCtrl', function($scope, app_service){
+angular.module('app').controller('cartCtrl', function($scope, cartService){
 
-
-    $scope.shoppingCart = app_service.shoppingCart;
-
-    // $scope.cartTotal = app_service.getTotal();
-    // console.log($scope.cartTotal);
+    $scope.shoppingCart = cartService.shoppingCart;
 
 });

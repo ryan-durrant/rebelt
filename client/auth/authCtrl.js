@@ -1,11 +1,11 @@
-angular.module('app').controller('authCtrl', function($scope, app_service, $cookies){
+angular.module('app').controller('authCtrl', function($scope, authService, $cookies){
 
   //SIGNUP FORM
   //Everything is assigned to $scope.customerData keys
   $scope.newCustomer = function(){
-    app_service.createCustomer($scope.customerData).then(function(response){
-      app_service.user = response.data;
-      $scope.user = app_service.user;
+    authService.createCustomer($scope.customerData).then(function(response){
+      authService.user = response.data;
+      $scope.user = authService.user;
     });
     //Resets the form input boxes
     $scope.customerData = undefined;
@@ -24,9 +24,9 @@ angular.module('app').controller('authCtrl', function($scope, app_service, $cook
   $scope.findCookieUser();
 
   $scope.login = function(){
-    app_service.login($scope.credentials).then(function(response){
-      app_service.user = response.data;
-      $scope.user = app_service.user;
+    authService.login($scope.credentials).then(function(response){
+      authService.user = response.data;
+      $scope.user = authService.user;
     });
 
     //Resets the form input boxes
@@ -36,8 +36,9 @@ angular.module('app').controller('authCtrl', function($scope, app_service, $cook
   $scope.logout = function(){
     $scope.user = undefined;
     $cookies.remove('loggedInUser');
-    console.log("Cookie removed");
     $scope.cookieUser = "";
   };
+
+
 
 });
