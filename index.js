@@ -24,7 +24,7 @@ var connectionString = "postgres://ryandurrant@localhost/rebelt";
 var massiveInstance = massive.connectSync({connectionString : connectionString});
 
 module.exports = app;
-var endpoint = require('./public/js/server_endpoints.js');
+var endpoint = require('./api/server_endpoints.js');
 
 app.use(bodyParser.json());
 app.use(cors());
@@ -99,7 +99,8 @@ passport.deserializeUser(function(obj, done) {
 
 //---------------END OAUTH WITH FACEBOOK-----------------
 
-app.use(express.static(path.resolve(__dirname, 'public')));
+app.use(express.static(path.resolve(__dirname, 'client')));
+// app.use(express.static(path.resolve(__dirname)));
 //express.static looks for the root folder and then finds the index.html
 
 app.listen(3003, function() {
