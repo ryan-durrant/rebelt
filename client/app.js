@@ -8,27 +8,23 @@ var app = angular.module('app', ['ui.router', 'ngCookies'])
       })
       .state({
         name: 'mens_belts',
-        url:'/mens',
-        templateUrl: "./products/mens_belts.html",
-        controller: "productsCtrl"
+        url:'/men',
+        template: '<product-grid type="men"></product-grid>'
       })
       .state({
         name: 'womens_belts',
-        url: '/womens',
-        templateUrl: "./products/womens_belts.html",
-        controller: "productsCtrl"
+        url: '/women',
+        template: '<product-grid type="women"></product-grid>'
       })
       .state({
         name: 'kids_belts',
         url: '/kids',
-        templateUrl: "./products/kids_belts.html",
-        controller: "productsCtrl"
+        template: '<product-grid type="kids"></product-grid>'
       })
       .state({
-        name: 'allProducts',
+        name: 'products',
         url: '/products',
-        templateUrl: "./products/all_products.html",
-        controller: "productsCtrl"
+        template: '<product-grid></product-grid>'
       })
       .state({
         name: 'about',

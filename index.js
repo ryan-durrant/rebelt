@@ -86,7 +86,7 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook', {
   successRedirect: '/',
   failureRedirect: '/auth/facebook'
 }), function(req, res) {
-  console.log(req.session);
+  //console.log(req.session);
 });
 
 passport.serializeUser(function(user, done) {

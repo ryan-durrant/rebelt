@@ -96,8 +96,8 @@ module.exports = {
     var db = app.get('db');
 
     db.login(req.body.email, function(err, customer){
-      console.log(customer[0].password);
-      console.log(req.body.password);
+      //console.log(customer[0].password);
+      //console.log(req.body.password);
       if(customer[0].password === req.body.password){
         res.status(200).json(customer[0]);
       }
