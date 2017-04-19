@@ -8,10 +8,11 @@ angular.module('app').component('productGrid', {
   }
 });
 
-//by default the component binds to the $scope
+//by default the component binds to the $scope, so $scope isn't necessary but you can still have it if you want.
 function Controller(productService){
   var model = this;
 
+  //$onInit waits for the bindings to be ready before running the function.
   model.$onInit = function(){
     productService.getProducts(model.type)
       .then(function products(response){

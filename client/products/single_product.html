@@ -15,11 +15,11 @@
     <div class="row">
         <div class="col s7">
             <!-- <img class="responsive-img" src="http://res.cloudinary.com/darrwzc2q/image/upload/v1490880404/women_belt_s8cgvr.jpg" alt=""> -->
-            <img class="responsive-img" ng-src="{{oneProd.image_url}}">
+            <img class="responsive-img" ng-src="{{model.oneProd.image_url}}">
         </div>
         <div class="col s5">
-            <h4 class="productTitle">{{oneProd.name}}</h5>
-            <h6 class="productPrice">{{oneProd.price}}</h6>
+            <h4 class="productTitle">{{model.oneProd.name}}</h5>
+            <h6 class="productPrice">{{model.oneProd.price}}</h6>
 
             <div>
                 <strong><h6>Product description</h6></strong>
@@ -29,7 +29,7 @@
 
             <div class="center">
             </br>
-              <button ng-click="addToCart(oneProd.id, oneProd.image_url, oneProd.name, oneProd.price)" data-target="myModal" id="cartBtn" class="btn btn-cart">Add to Cart</button>
+              <button ng-click="model.addToCart(model.oneProd.id, model.oneProd.image_url, model.oneProd.name, model.oneProd.price)" data-target="myModal" id="cartBtn" class="btn btn-cart">Add to Cart</button>
             </div>
         </div>
     </div>
