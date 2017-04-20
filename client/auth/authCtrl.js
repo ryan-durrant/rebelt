@@ -2,42 +2,42 @@ angular.module('app').controller('authCtrl', function($scope, authService, $cook
 
   //SIGNUP FORM
   //Everything is assigned to $scope.customerData keys
-  $scope.newCustomer = function(){
-    authService.createCustomer($scope.customerData).then(function(response){
-      authService.user = response.data;
-      $scope.user = authService.user;
-    });
-    //Resets the form input boxes
-    $scope.customerData = undefined;
-  };
-
-  $scope.findCookieUser = function(){
-    if(document.cookie.indexOf('loggedInUser') > -1){
-      $scope.cookieUser = JSON.parse($cookies.getAll().loggedInUser).displayName;
-      $scope.cookieUserF_Name = $scope.cookieUser.slice(0, $scope.cookieUser.indexOf(" "));
-      $scope.cookieUserL_Name = $scope.cookieUser.slice($scope.cookieUser.indexOf(" ") + 1);
-    }
-    else {
-      $scope.cookieUser = "";
-    }
-  };
-  $scope.findCookieUser();
-
-  $scope.login = function(){
-    authService.login($scope.credentials).then(function(response){
-      authService.user = response.data;
-      $scope.user = authService.user;
-    });
-
-    //Resets the form input boxes
-    $scope.credentials = undefined;
-  };
-
-  $scope.logout = function(){
-    $scope.user = undefined;
-    $cookies.remove('loggedInUser');
-    $scope.cookieUser = "";
-  };
+  // $scope.newCustomer = function(){
+  //   authService.createCustomer($scope.customerData).then(function(response){
+  //     authService.user = response.data;
+  //     $scope.user = authService.user;
+  //   });
+  //   //Resets the form input boxes
+  //   $scope.customerData = undefined;
+  // };
+  //
+  // $scope.findCookieUser = function(){
+  //   if(document.cookie.indexOf('loggedInUser') > -1){
+  //     $scope.cookieUser = JSON.parse($cookies.getAll().loggedInUser).displayName;
+  //     $scope.cookieUserF_Name = $scope.cookieUser.slice(0, $scope.cookieUser.indexOf(" "));
+  //     $scope.cookieUserL_Name = $scope.cookieUser.slice($scope.cookieUser.indexOf(" ") + 1);
+  //   }
+  //   else {
+  //     $scope.cookieUser = "";
+  //   }
+  // };
+  // $scope.findCookieUser();
+  //
+  // $scope.login = function(){
+  //   authService.login($scope.credentials).then(function(response){
+  //     authService.user = response.data;
+  //     $scope.user = authService.user;
+  //   });
+  //
+  //   //Resets the form input boxes
+  //   $scope.credentials = undefined;
+  // };
+  //
+  // $scope.logout = function(){
+  //   $scope.user = undefined;
+  //   $cookies.remove('loggedInUser');
+  //   $scope.cookieUser = "";
+  // };
 
 
 //-------------LOGIN AND SIGNUP MODAL----------------
@@ -107,33 +107,34 @@ angular.module('app').controller('authCtrl', function($scope, authService, $cook
             login_selected();
           });
 
-          function login_selected(){
-            mainNav.children('ul').removeClass('is-visible');
-            formModal.addClass('is-visible');
-            formLogin.addClass('is-selected');
-            formSignup.removeClass('is-selected');
-            formForgotPassword.removeClass('is-selected');
-            tabLogin.addClass('selected');
-            tabSignup.removeClass('selected');
-          }
 
-          function signup_selected(){
-            mainNav.children('ul').removeClass('is-visible');
-            formModal.addClass('is-visible');
-            formLogin.removeClass('is-selected');
-            formSignup.addClass('is-selected');
-            formForgotPassword.removeClass('is-selected');
-            tabLogin.removeClass('selected');
-            tabSignup.addClass('selected');
-          }
-
-          function forgot_password_selected(){
-            formLogin.removeClass('is-selected');
-            formSignup.removeClass('is-selected');
-            formForgotPassword.addClass('is-selected');
-          }
         };
   $scope.modalLoad();
 
+  $scope.login_selected = function(){
+    mainNav.children('ul').removeClass('is-visible');
+    formModal.addClass('is-visible');
+    formLogin.addClass('is-selected');
+    formSignup.removeClass('is-selected');
+    formForgotPassword.removeClass('is-selected');
+    tabLogin.addClass('selected');
+    tabSignup.removeClass('selected');
+  }
+
+  $scope.signup_selected = function(){
+    mainNav.children('ul').removeClass('is-visible');
+    formModal.addClass('is-visible');
+    formLogin.removeClass('is-selected');
+    formSignup.addClass('is-selected');
+    formForgotPassword.removeClass('is-selected');
+    tabLogin.removeClass('selected');
+    tabSignup.addClass('selected');
+  }
+
+  $scope.forgot_password_selected = function(){
+    formLogin.removeClass('is-selected');
+    formSignup.removeClass('is-selected');
+    formForgotPassword.addClass('is-selected');
+  }
 
 });

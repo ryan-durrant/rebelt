@@ -1,0 +1,19 @@
+<!-- I was using ng-if instead of ng-show, the problem was that ng-if removes the node from the DOM so that when I logged out and tried to log in again the click wasn't registering which stopped the modal from showing up. Ng-show keeps the DOM and hides elements but the clicks will always be associated with those elements. The other solution would be to associate the jquery to the parent of these LI's and not the LI's themselves so that the parent would always be on the DOM and the children nodes/li's could be added and removed and the jquery would still work. -->
+<div ng-show="!model.user && !model.cookieUser" class="main-nav">
+    <ul class="right hide-on-med-and-down">
+        <li><a class='cd-signup navSpacing' href='/'>Register</a></li>
+        <li><a class='cd-signin navSpacing' href='/'>Log in</a></li>
+    </ul>
+</div>
+<div ng-show="user" class="main-nav">
+    <ul class="right hide-on-med-and-down">
+        <li class='navSpacing userName'>Hi {{model.user.f_name}}</li>
+        <li><a class='navSpacing' ng-click="model.logout()">Log Out</a></li>
+    </ul>
+</div>
+<div ng-show="cookieUser" class="main-nav">
+    <ul class="right hide-on-med-and-down">
+        <li class='navSpacing userName'>Hi {{model.cookieUserF_Name}}</li>
+        <li><a href='/logout' class='navSpacing' ng-click="model.logout()">Log Out</a></li>
+    </ul>
+</div>
