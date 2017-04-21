@@ -2,10 +2,8 @@ angular.module('app').component('authBar', {
   templateUrl: './auth/authBar.html',
   controller: Controller,
   controllerAs: 'model',
-  css: './login.css',
   bindings: {
-    modalLoad: '=',
-    userCredentials: '='
+    modalLoad: '='
   }
 });
 
@@ -36,6 +34,7 @@ function Controller(authService, $cookies){
   model.findCookieUser();
 
   model.login = function(){
+    // debugger;
     authService.login(model.credentials).then(function(response){
       authService.user = response.data;
       model.user = authService.user;

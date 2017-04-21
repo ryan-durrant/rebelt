@@ -11,6 +11,7 @@ angular.module('app').factory('authService', function($http){
     },
 
     login: function(credentials){
+      debugger;
       return $http.post('/api/login', credentials);
       //The second argument of this AJAX call is req.body
     },

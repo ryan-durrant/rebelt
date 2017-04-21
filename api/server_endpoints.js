@@ -94,10 +94,12 @@ module.exports = {
 
   Login: function(req, res, next){
     var db = app.get('db');
+    debugger;
 
     db.login(req.body.email, function(err, customer){
       //console.log(customer[0].password);
       //console.log(req.body.password);
+      debugger;
       if(customer[0].password === req.body.password){
         res.status(200).json(customer[0]);
       }
