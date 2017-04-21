@@ -10,6 +10,11 @@ angular.module('app').component('authBar', {
 function Controller(authService, $cookies){
   var model = this;
 
+  model.facebookAuth = function(){
+    authService.facebookAuth();
+  };
+
+
   //SIGNUP FORM
   //Everything is assigned to model.customerData keys
   model.newCustomer = function(){
@@ -37,7 +42,9 @@ function Controller(authService, $cookies){
     // debugger;
     authService.login(model.credentials).then(function(response){
       authService.user = response.data;
+      console.log("Response:", response.data);
       model.user = authService.user;
+      console.log("model.user:", model.user);
     });
 
     //Resets the form input boxes
