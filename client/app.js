@@ -46,6 +46,10 @@ var app = angular.module('app', ['ui.router', 'ngCookies'])
         name: 'shoppingCart',
         url: '/cart',
         template: '<shopping-cart></shopping-cart>'
+      })
+      .state({
+        name: 'facebookAuth',
+        url: '/auth/facebook'
       });
 
       //MUST DO!!! This sends your page to the home state upon arrival.
