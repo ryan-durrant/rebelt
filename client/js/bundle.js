@@ -759,6 +759,8 @@ angular.module('app').component('singleProduct', {
 function Controller(productService, cartService, $stateParams) {
   var model = this;
 
+  console.log("Let's go to Disneyland");
+
   // console.log($stateParams);
   //$stateParams allows me to see whatever is in the url
 
@@ -931,6 +933,7 @@ if(false) {
 /* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
+//--------JS---------
 __webpack_require__(2);
 __webpack_require__(6);
 __webpack_require__(3);
@@ -941,6 +944,8 @@ __webpack_require__(7);
 __webpack_require__(11);
 __webpack_require__(10);
 __webpack_require__(5);
+
+//--------CSS---------
 __webpack_require__(14);
 __webpack_require__(13);
 __webpack_require__(12);
