@@ -1,10 +1,13 @@
+var path = require("path");
+
 module.exports = {
   devtool: 'source-map',
   // because everything get's bundled into a bundle.js file, finding errors or console.logs is difficult, source-map maintains the files and the lines that the errors started from.
   //don't put a source-map in production
+  //BE CAREFUL - sometimes source-map gets messed up
   entry: "./entry.js",
   output: {
-    path: __dirname + "/client/js",
+    path: path.resolve(__dirname, "/client/js"),
     filename: "bundle.js"
   },
   module: {
